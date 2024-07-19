@@ -1,1 +1,2 @@
-# Login-Verification-In-Django
+This app is designed to perfrom login and confirmation using Django.
+First User needs to Signin to be registered, where a confirmation link is sent to the user's email and then the user can signin following the confirmation link.
