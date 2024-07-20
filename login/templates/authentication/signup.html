@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp</title>
+    <title>Sign Up</title>
 </head>
 <body>
 
@@ -14,14 +14,16 @@
         <span aria-hidden="true">&times;</span></button>
     </div>
     {% endfor %}
+
+
     
     <h3>SignUp</h3>
     <form action="/signup" method="post">
-
-        {% csrf_token %}
+        <!-- always use csrf token when working with post method -->
+        {% csrf_token %}  
 
         <label for="">UserName</label>
-        <input type="text" id="username" name="username" placeholder = " Create a username (only text and numbers)">
+        <input type="text" id="username" name="username" placeholder = " Create your username (only text and numbers are allowed)">
         <br>
         <label for="">First Name</label>
         <input type="text" id="fname" name="fname" placeholder = "enter your first name">
