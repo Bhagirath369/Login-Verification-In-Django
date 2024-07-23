@@ -31,6 +31,8 @@ def signup(request):
         pass1 = request.POST['pass1']
         pass2 = request.POST['pass2']
 
+        # validating the user inputs
+
         if User.objects.filter(username = username):
             messages.error(request, "Username already exists!, Please try another one")
             return redirect('home')
@@ -54,7 +56,7 @@ def signup(request):
         my_user = User.objects.create_user(username, email, pass1)
         my_user.first_name = fname
         my_user.last_name = lname
-        my_user.is_active= False
+        my_user.is_active = False
 
         my_user.save()
 
@@ -109,11 +111,9 @@ def signin(request):
             return render (request, 'authentication/index.html',{'fname': fname})
 
 
-
         else:
             messages.error(request,  "Wrong Credentials")
             return redirect('home')
-
 
 
     return render(request, 'authentication/signin.html')
